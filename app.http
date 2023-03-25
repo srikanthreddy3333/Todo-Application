@@ -1,0 +1,41 @@
+###
+//API 1
+GET http://localhost:3000/todos/
+
+###
+//Scenario 1 list of all todos whose status is 'TO DO'
+GET http://localhost:3000/todos/?status=TO%20DO
+
+###
+//Scenario 2 list of all todos whose priority is 'HIGH'
+GET http://localhost:3000/todos/?priority=HIGH
+###
+//Scenario 3 list of all todos whose priority is 'HIGH' and status is 'IN PROGRESS'
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+###
+//Scenario 4 list of all todos whose todo contains 'Play' text
+GET http://localhost:3000/todos/?search_q=Play
+
+###
+//API 2 get specific todo based on the todo ID
+GET http://localhost:3000/todos/3/
+
+###
+//API 3 Create a todo in the todo table
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 10,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+
+###
+//API 4 Updates the details of a specific todo based on the todo ID
+put http://localhost:3000/todos/3/
+
+###
+//API 5 Deletes a todo from the todo table
+DELETE http://localhost:3000/todos/3/
